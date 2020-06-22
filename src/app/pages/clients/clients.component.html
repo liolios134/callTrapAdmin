@@ -1,1 +1,52 @@
-<p>clients works!</p>
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-8">
+            <h1 class="text-center">Χρήστες</h1>
+        </div>
+        <div class="col-sm-4 text-right">
+            <button class="btn btn-info" (click)="getClients()">
+                <i class="fa fa-refresh"></i>
+            </button> 
+            <a class="btn btn-primary" routerLink="/clients/create">
+                <i class="fa fa-plus"></i> Add New
+            </a>
+        </div>
+    </div>
+    <div class="row" *ngIf="loading">
+        <div class="col-sm-12 text-center">
+            <div class="spinner-border" role="status">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of clients">
+                            <td>{{u.firstName}}</td>
+                            <td>{{u.lastName}}</td>
+                            <td>{{u.email}}</td>
+                            <td class="text-nowrap">
+                                <a [routerLink]="'/clients/update/' + u._id" class="btn btn-sm btn-warning mr-2">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <button (click)="deleteClient(u._id)" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-remove"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
