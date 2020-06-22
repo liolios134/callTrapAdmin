@@ -28,7 +28,11 @@ export class CreateUserComponent implements OnInit {
   public saveUser() {
     this.http.post(environment.apiUrl + "/users", this.user)
     .subscribe(response => {
-      this.router.navigate(["/users"]);
+      if (response.success) {
+        this.router.navigate(["/users"]);
+      } else {
+        console.log(response);
+      }
     });
   }
 
