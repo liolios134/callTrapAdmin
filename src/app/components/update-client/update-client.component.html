@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mt-3">Δημιουργία Πελάτη</h1>
+        </div>
+    </div>        
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="client-name">Όνομα</label>
+                <input [(ngModel)]="client.firstName" type="text" class="form-control" id="client-name" />
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="client-last">Επίθετο</label>
+                <input [(ngModel)]="client.lastName" type="text" class="form-control" id="client-last" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="gender">Φύλλο</label>
+                <select [(ngModel)]="client.gender" class="form-control" id="gender">
+                    <option *ngFor="let gen of genders" [value]="gen._id">{{ gen.title }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="client-phone">Νούμερο</label>
+                <input [(ngModel)]="client.phones" type="text" class="form-control" id="client-phone" />
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <label>Σημειώσεις Πελάτη</label>
+                <editor apiKey="no-api-key" [(ngModel)]="client.notes">
+
+                </editor>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-4 offset-4">
+            <button class="btn btn-success btn-block" (click)="saveClient()">Save</button>
+        </div>
+    </div>
+</div>

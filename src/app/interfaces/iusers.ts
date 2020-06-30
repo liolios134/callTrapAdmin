@@ -5,6 +5,6 @@ export interface IUsers {
     email: String;
     password: String,
     gender: String,
-    phone: Number,
+    phones: Number,
     photo: String
 }

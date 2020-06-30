@@ -22,10 +22,12 @@
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "@syncfusion/ej2-angular-schedule": "^18.1.54",
     "@syncfusion/ej2-calendars": "^18.1.53",
+    "@tinymce/tinymce-angular": "^3.6.1",
     "bootstrap": "^4.5.0",
     "jquery": "^3.5.1",
     "ngx-dropzone-wrapper": "^9.0.0",
     "ngx-filter-pipe": "^2.1.2",
+    "ngx-webstorage": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
